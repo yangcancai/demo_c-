@@ -11,8 +11,8 @@
 typedef struct thread_str{
     int rs;
 }thread_str;
-int g_tickets = 1000;
-int g_num = 1000;
+int g_tickets = 100;
+int g_num = 100;
 pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t g_mutex_num = PTHREAD_MUTEX_INITIALIZER;
 void sell_num(int thread){
