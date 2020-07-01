@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
 project(debug_dead_lock)
-
 set(CMAKE_CXX_STANDARD 14)
+set(SolutionDir ${PROJECT_SOURCE_DIR})
 #SET(CMAKE_CXX_FLAGS_DEBUG "-lpthread")
 add_executable(debug_dead_lock debug_dead_lock.cpp)
+add_executable(def define.cpp)
 target_link_libraries(debug_dead_lock 
 pthread)
+add_subdirectory(NoahGameFrame)
+add_definitions(-std=c++11)
+#include_directories(./NoahGameFrame/Dep/concurrentqueue/)

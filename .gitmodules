@@ -1,0 +1,4 @@
+[submodule "NoahGameFrame/Dep/concurrentqueue"]
+	path = NoahGameFrame/Dep/concurrentqueue
+	url = https://github.com/cameron314/concurrentqueue.git
+	branch = master
