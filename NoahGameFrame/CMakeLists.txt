@@ -9,3 +9,5 @@ add_executable(
         ${ExampleSrc}
         ${NFKernelSrc}
 )
+target_link_libraries(NFServer
+  pthread)
