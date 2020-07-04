@@ -5,8 +5,12 @@ set(SolutionDir ${PROJECT_SOURCE_DIR})
 #SET(CMAKE_CXX_FLAGS_DEBUG "-lpthread")
 add_executable(debug_dead_lock debug_dead_lock.cpp)
 add_executable(def define.cpp)
-target_link_libraries(debug_dead_lock 
-pthread)
+if(WIN32)
+else()
+    target_link_libraries(debug_dead_lock
+            pthread)
+endif()
+
 add_subdirectory(NoahGameFrame)
 add_definitions(-std=c++11)
 #include_directories(./NoahGameFrame/Dep/concurrentqueue/)
