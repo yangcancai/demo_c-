@@ -14,6 +14,7 @@ public:
     ~NFIModule(){}
     virtual bool Execute() = 0;
     virtual bool Init() {return true;}
+    virtual bool AfterInit() {return true;}
     virtual bool Shut() {return true;}
     std::string strName;
 protected:

@@ -6,9 +6,13 @@
 #define DEBUG_DEAD_LOCK_NFIPLUGINMANAGER_H
 #include "NFPlatform.h"
 #include <assert.h>
+#if NF_PLATFORM == NF_PLATFORM_WIN
+#else
 #include <cxxabi.h>
+#endif
 #define FIND_MODULE(className) \
     dynamic_cast<className*>(pPluginManager->FindModule(#className));
+
 class NFIPlugin;
 class NFIModule;
 class NFIPluginManager;
@@ -63,10 +67,21 @@ public:
 
     template<typename T>
     T *FindModule() {
-        // typeid
+        NFIModule *pLogicModule = nullptr;
+#if NF_PLATFORM == NF_PLATFORM_WIN
+        pLogicModule = FindModule(covert_class(typeid(T).name()));
+#else
         const std::type_info  &ti = typeid(T);
-        char* realname = abi::__cxa_demangle(ti.name(), 0, 0, nullptr);
-        NFIModule *pLogicModule = FindModule(realname);
+        int status = -1;
+        char* realname = abi::__cxa_demangle(ti.name(), 0, 0, &status);
+        if (0 == status) {
+            pLogicModule = FindModule(realname);
+            free(realname);
+        }else{
+            assert(NULL);
+            return NULL;
+        }
+#endif
         if (pLogicModule) {
             if (!TIsDerived<T, NFIModule>::Result) {
                 return NULL;
@@ -85,5 +100,24 @@ public:
         return NULL;
     }
 
+private:
+    std::string covert_class(std::string str, std::string match, bool& isMatch) {
+        std::string::size_type pos = str.find(match);
+        if (pos != std::string::npos) {
+            isMatch = true;
+            return str.substr(pos + match.length(), str.length() - match.length());
+        }
+        isMatch = false;
+        return str;
+    }
+    std::string covert_class(const std::string &str) {
+        bool isMatch = false;
+        std::string really_name = covert_class(str, "class ", isMatch);
+        if (!isMatch) {
+            return covert_class(str, "struct ", isMatch);
+        } else {
+            return really_name;
+        }
+    }
 };
 #endif //DEBUG_DEAD_LOCK_NFIPLUGINMANAGER_H

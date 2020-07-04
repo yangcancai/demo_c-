@@ -13,10 +13,11 @@ public:
     ExampleModule(NFIPluginManager* pPluginMananger):NFIModule(pPluginMananger){}
     ~ExampleModule(){}
     virtual bool Init();
+    virtual bool AfterInit() override ;
     virtual bool Execute();
-    void test(NFThreadTask& task);
 private:
    NFIThreadPoolModule* m_pThreadPoolModule = nullptr;
+    void test(NFThreadTask& task);
 };
 
 

@@ -19,6 +19,9 @@ bool NFPluginManager::Init()
 }
 bool NFPluginManager::AfterInit()
 {
+    for (auto it: mPlugins){
+        it.second->AfterInit();
+    }
     return true;
 }
 bool NFPluginManager::ReadyExecute() {

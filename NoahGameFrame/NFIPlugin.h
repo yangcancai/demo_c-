@@ -35,6 +35,13 @@ public:
         }
        return true;
     }
+    virtual bool AfterInit(){
+        for (auto it: mModules){
+            NFIModule* pModule = it.second;
+            pModule->AfterInit();
+        }
+        return true;
+    }
     virtual bool Execute(){
         for (auto it: mModules){
             NFIModule* pModule = it.second;
