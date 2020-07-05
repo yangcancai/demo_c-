@@ -12,5 +12,6 @@ else()
 endif()
 
 add_subdirectory(NoahGameFrame)
+add_subdirectory(IPC)
 add_definitions(-std=c++11)
 #include_directories(./NoahGameFrame/Dep/concurrentqueue/)
