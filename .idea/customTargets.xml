@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="7a790e09-9eae-4e47-ac73-4fa617f361a4" name="make_test" projectName="demo_cmake">
+      <configuration id="304ed8c1-0921-4c1f-a3bf-1ce68e41f8a3" name="make_test" toolchainName="Cygwin">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_make test" />
+        </build>
+      </configuration>
+    </target>
+  </component>
+</project>
