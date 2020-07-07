@@ -4,9 +4,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
 #include <iostream>
+#ifdef _WIN32 | _WIN64 | _WINDOWS
+#else
 #include <unistd.h>
+#include <pthread.h>
+#endif
 
 typedef struct thread_str{
     int rs;

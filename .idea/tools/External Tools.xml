@@ -2,7 +2,7 @@
   <tool name="make test" description="make test" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
     <exec>
       <option name="COMMAND" value="C:\cygwin64\bin\bash.exe" />
-      <option name="PARAMETERS" value="-- login -c &quot;make test&quot;" />
+      <option name="PARAMETERS" value="--login -c &quot;cd /cygdrive/h/cam/c++/demo_cpp/demo_cmake/build/cygwin;make test&quot;" />
       <option name="WORKING_DIRECTORY" value="H:/cam/c++/demo_cpp/demo_cmake/build/cygwin" />
     </exec>
   </tool>
