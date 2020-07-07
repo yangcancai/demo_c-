@@ -5,8 +5,8 @@
 #ifndef DEBUG_DEAD_LOCK_EXAMPLE_H
 #define DEBUG_DEAD_LOCK_EXAMPLE_H
 
-#include "../NFIPlugin.h"
-#include "../NFIPluginManager.h"
+#include "NFIPlugin.h"
+#include "NFIPluginManager.h"
 class Example : public NFIPlugin
 {
 public:

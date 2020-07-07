@@ -5,9 +5,9 @@
 #ifndef DEBUG_DEAD_LOCK_EXAMPLEMODULE_H
 #define DEBUG_DEAD_LOCK_EXAMPLEMODULE_H
 
-#include "../NFIModule.h"
-#include "../NFIPluginManager.h"
-#include "../ThreadPool/NFIThreadPoolModule.h"
+#include "NFIModule.h"
+#include "NFIPluginManager.h"
+#include "ThreadPool/NFIThreadPoolModule.h"
 class ExampleModule : public NFIModule{
 public:
     ExampleModule(NFIPluginManager* pPluginMananger):NFIModule(pPluginMananger){}

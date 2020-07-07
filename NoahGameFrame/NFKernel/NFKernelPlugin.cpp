@@ -3,7 +3,7 @@
 //
 
 #include "NFKernelPlugin.h"
-#include "../ThreadPool/NFThreadPoolModule.h"
+#include "ThreadPool/NFThreadPoolModule.h"
 NFKernelPlugin::NFKernelPlugin(NFIPluginManager *pPluginManager):NFIPlugin(pPluginManager) {
 
 }

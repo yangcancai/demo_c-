@@ -18,5 +18,7 @@ int main()
         std::this_thread::sleep_for(std::chrono::milliseconds (1));
        server->Execute();
    }
+   std::cout << "close..." << std::endl;
+   getchar();
    return 0;
 }

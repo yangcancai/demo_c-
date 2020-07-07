@@ -5,8 +5,8 @@
 #ifndef DEBUG_DEAD_LOCK_NFKERNELPLUGIN_H
 #define DEBUG_DEAD_LOCK_NFKERNELPLUGIN_H
 
-#include "../NFIPlugin.h"
-#include "../NFIPluginManager.h"
+#include "NFIPlugin.h"
+#include "NFIPluginManager.h"
 class NFKernelPlugin : public NFIPlugin{
 public:
     NFKernelPlugin(NFIPluginManager* pPluginManager);

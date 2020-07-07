@@ -4,8 +4,8 @@
 
 #ifndef DEBUG_DEAD_LOCK_NFITHREADPOOLMODULE_H
 #define DEBUG_DEAD_LOCK_NFITHREADPOOLMODULE_H
-#include "../NFIModule.h"
-#include "../NFGUID.h"
+#include "NFIModule.h"
+#include "NFGUID.h"
 class NFThreadTask;
 typedef  std::function<void(NFThreadTask&)> TASK_PROCESS_FUNCTOR;
 typedef  NF_SHARED_PTR<TASK_PROCESS_FUNCTOR> TASK_PROCESS_FUNCTOR_PTR;

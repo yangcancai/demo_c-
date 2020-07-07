@@ -5,7 +5,7 @@
 #ifndef DEBUG_DEAD_LOCK_NFQUEUE_H
 #define DEBUG_DEAD_LOCK_NFQUEUE_H
 
-#include "../Dep/concurrentqueue/concurrentqueue.h"
+#include "Dep/concurrentqueue/concurrentqueue.h"
 template <typename T>
 class NFQueue: public moodycamel::ConcurrentQueue<T> {
 public:
