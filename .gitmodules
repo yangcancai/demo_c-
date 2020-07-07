@@ -2,7 +2,3 @@
 	path = NoahGameFrame/Dep/concurrentqueue
 	url = https://github.com/cameron314/concurrentqueue.git
 	branch = master
-[submodule "Dependencies/boost"]
-	path = Dependencies/boost
-	url = https://github.com/boostorg/boost.git
-	branch = master
